@@ -12,46 +12,46 @@ import naviStyle from "./navigator.module.scss"
 
 function Navigator() {
     return (
-        <div>
+        <div className={naviStyle.holdAll}>
             <div className={naviStyle.holdLogo}>
                 <img src={logo} alt="logo" />
             </div>
-            <div>
-                <div>
-                    <span><img src={Icon} alt="Box" /></span>
-                    <span>Dashboard</span>
+            <div className={naviStyle.holdNavigate}>
+                <div className={naviStyle.menu}>
+                    <span className={naviStyle.imkg}><img src={Icon} alt="Box" /></span>
+                    <span className={naviStyle.text + " " + naviStyle.adminText}>Dashboard</span>
                 </div>
-                <div>
-                    <span><img src={person} alt="Box" /></span>
-                    <span>Admin</span>
+                <div className={naviStyle.menu}>
+                    <span className={naviStyle.imkg}><img src={person} alt="Box" /></span>
+                    <span className={naviStyle.text}>Admin</span>
                 </div>
-                <div>
-                    <span><img src={manyPerson} alt="Box" /></span>
-                    <span>Customers</span>
+                <div className={naviStyle.menu}>
+                    <span className={naviStyle.imkg}><img src={manyPerson} alt="Box" /></span>
+                    <span className={naviStyle.text}>Customers</span>
                 </div>
-                <div>
-                    <span><img src={bus} alt="Box" /></span>
-                    <span>Shipments</span>
+                <div className={naviStyle.menu}>
+                    <span className={naviStyle.imkg}><img src={bus} alt="Box" /></span>
+                    <span className={naviStyle.text}>Shipments</span>
                 </div>
-                <div>
-                    <span><img src={tracking} alt="Bus" /></span>
-                    <span>Tracking</span>
+                <div className={naviStyle.menu}>
+                    <span className={naviStyle.imkg}><img src={tracking} alt="Bus" /></span>
+                    <span className={naviStyle.text}>Tracking</span>
                 </div>
-                <div>
-                    <span><img src={document} alt="Bus" /></span>
-                    <span>Documents</span>
+                <div className={naviStyle.menu}>
+                    <span className={naviStyle.imkg}><img src={document} alt="Bus" /></span>
+                    <span className={naviStyle.text}>Documents</span>
                 </div>
-                <div>
-                    <span><img src={document} alt="Bus" /></span>
-                    <span>Rates</span>
+                <div className={naviStyle.menu}>
+                    <span className={naviStyle.imkg}><img src={document} alt="Bus" /></span>
+                    <span className={naviStyle.text}>Rates</span>
                 </div>
-                <div>
-                    <span><img src={copy} alt="Bus" /></span>
-                    <span>Quotes</span>
+                <div className={naviStyle.menu}>
+                    <span className={naviStyle.imkg}><img src={copy} alt="Bus" /></span>
+                    <span className={naviStyle.text}>Quotes</span>
                 </div>
-                <div>
-                    <span><img src={invoice} alt="Bus" /></span>
-                    <span>Invoices</span>
+                <div className={naviStyle.menu}>
+                    <span className={naviStyle.imkg}><img src={invoice} alt="Bus" /></span>
+                    <span className={naviStyle.text}>Invoices</span>
                 </div>
             </div>
         </div>

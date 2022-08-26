@@ -4,3 +4,32 @@
   align-items: center;
   height: 120px;
 }
+
+.holdNavigate {
+  padding: 20px 0;
+}
+
+.menu {
+  padding: 20px 35px;
+  cursor: pointer;
+}
+
+.imkg {
+  margin-right: 30px;
+}
+
+.text {
+  font-size: 18px;
+  color: #6b7280;
+  font-weight: 600;
+}
+.adminText {
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+}
+
+.holdAll {
+  height: 100vh;
+  overflow-y: scroll;
+}
