@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <div>small</div>
-      <div>big</div>
+      <Routes>
+        {/* <Route path="/" element={Index} /> */}
+      </Routes>
     </div>
   );
 }
