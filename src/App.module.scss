@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.holdAll {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.smallBox {
+  width: 20%;
+  height: 100vh;
+  border-right: 1px solid #e5e7eb;
+}
