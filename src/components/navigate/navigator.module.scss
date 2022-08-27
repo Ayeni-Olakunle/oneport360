@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120px;
+  height: 85px;
 }
 
 .holdNavigate {
@@ -10,12 +10,13 @@
 }
 
 .menu {
-  padding: 20px 35px;
-  cursor: pointer;
+  padding: 10px 35px;
+  text-decoration: none;
 }
 
 .imkg {
   margin-right: 30px;
+  padding: 7px;
 }
 
 .text {
@@ -32,4 +33,31 @@
 .holdAll {
   height: 100vh;
   overflow-y: scroll;
+}
+.point {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.con {
+  font-size: 20px;
+  color: #6b7280;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.actIcon {
+  background: #3ab44a;
+  color: white;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 20px;
+}
+
+.link {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
