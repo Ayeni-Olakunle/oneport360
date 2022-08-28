@@ -4,10 +4,13 @@ import StyleShipp from "./shipments.module.scss";
 import flower2 from "../../../image/flower2.jfif";
 import { IoIosAdd } from 'react-icons/io';
 import { Form } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
+
 function ShipmentsTwo() {
+    const navigate = useNavigate();
     return (
         <div>
-            <p><BiArrowBack className={StyleShipp.backCore} /></p>
+            <p><BiArrowBack className={StyleShipp.backCore} onClick={() => navigate(-1)} /></p>
             <div className={StyleShipp.holdPro}>
                 <div className={StyleShipp.holdPro2}>
                     <img src={flower2} alt="Profile" className={StyleShipp.img} />
@@ -21,8 +24,8 @@ function ShipmentsTwo() {
             </div>
             <div>
                 <div></div>
-                <div>
-                    <div>
+                <div className={StyleShipp.holdSelect}>
+                    <div className={StyleShipp.holdAddNewShip}>
                         <button className={StyleShipp.customerButton}>Add New Shipments <IoIosAdd className={StyleShipp.iconKoko} /></button>
                         <Form.Select aria-label="Default select example">
                             <option>Open this select menu</option>
@@ -37,7 +40,7 @@ function ShipmentsTwo() {
                             <option value="3">Three</option>
                         </Form.Select>
                     </div>
-                    <input type="search" placeholder="Search by Shipments ID, Destination" />
+                    <input type="search" placeholder="Search by Shipments ID, Destination" className={StyleShipp.search} />
                 </div>
             </div>
         </div>
