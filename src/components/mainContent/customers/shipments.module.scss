@@ -1,0 +1,70 @@
+.backCore {
+  cursor: pointer;
+}
+
+.img {
+  height: 60px;
+  border-radius: 50px;
+  width: 60px;
+  margin-right: 20px;
+}
+
+.editButton {
+  background: #3ab44a;
+  border-radius: 6px;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.holdPro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  width: 50%;
+  border-radius: 8px;
+  background: #f9fafb;
+  border: 2px solid #d1d5db;
+}
+.holdPro2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  margin: 0;
+  font-size: 18px;
+}
+.email {
+  margin: 0;
+  font-size: 15px;
+  padding: 5px 0;
+}
+
+.customerButton {
+  background: #3ab44a;
+  border-radius: 6px;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.iconKoko {
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}

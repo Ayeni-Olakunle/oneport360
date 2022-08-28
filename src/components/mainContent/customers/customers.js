@@ -2,6 +2,7 @@ import React from 'react';
 import { IoIosAdd } from 'react-icons/io';
 import customerStyles from "./customers.module.scss";
 import flower2 from "../../../image/flower2.jfif";
+import { Link } from "react-router-dom"
 
 function Customers() {
     return (
@@ -42,7 +43,9 @@ function Customers() {
                                 <td className={customerStyles.tableBorder}>2022/08/10</td>
                                 <td className={customerStyles.tableBorder}>
                                     <div className={customerStyles.holdButin}>
-                                        <button className={customerStyles.customerWhaite}>Shipments</button>
+                                        <button className={customerStyles.customerWhaite}>
+                                            <Link to="/shipmentsme">Shipments</Link>
+                                        </button>
                                         <button className={customerStyles.editButton}>Edit</button>
                                     </div>
                                 </td>
