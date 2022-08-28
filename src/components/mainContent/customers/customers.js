@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoIosAdd } from 'react-icons/io';
 import customerStyles from "./customers.module.scss";
+import flower2 from "../../../image/flower2.jfif";
 
 function Customers() {
     return (
@@ -34,7 +35,7 @@ function Customers() {
                                 </td>
                             </tr>
                             <tr>
-                                <td className={customerStyles.tableBorder}>Jonh</td>
+                                <td className={customerStyles.tableBorder}><div className={customerStyles.holdImage}><img src={flower2} alt="Profile" className={customerStyles.img} /> <span>Jonh</span></div></td>
                                 <td className={customerStyles.tableBorder}>Tom</td>
                                 <td className={customerStyles.tableBorder}>jonh@gmail.com</td>
                                 <td className={customerStyles.tableBorder}>09098402605</td>
@@ -50,7 +51,7 @@ function Customers() {
                     </table>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

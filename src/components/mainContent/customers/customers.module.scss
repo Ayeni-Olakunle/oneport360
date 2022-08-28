@@ -64,6 +64,7 @@ table thead tr td {
   font-style: normal;
   font-size: 12px;
   padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
 }
 table tbody tr td {
   color: #6b7280;
@@ -72,20 +73,32 @@ table tbody tr td {
   font-style: normal;
   font-size: 13px;
   font-weight: bold;
-  padding: 10px 10px;
+  padding: 6px 10px;
   border-bottom: 1px solid #e5e7eb;
-  //   border-top: 1px solid #e5e7eb;
 }
 
 table tbody tr td.tableBorder:first-child {
   border-left: 1px solid #e5e7eb;
-  border-radius: 8px 0px 0px 0px;
+  //   border-radius: 8px 0px 0px 0px;
 }
 table tbody tr td.tableBorder:last-child {
   border-right: 1px solid #e5e7eb;
-  border-radius: 0px 8px 0px 0px;
+  //   border-radius: 0px 8px 0px 0px;
 }
 table tbody tr td:last-child {
   border-right: 1px solid #e5e7eb;
-  border-radius: 0px 0px 0px 0px;
+  //   border-radius: 0px 0px 0px 0px;
+}
+
+.holdImage {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.img {
+  height: 50px;
+  border-radius: 50px;
+  width: 50px;
+  margin-right: 10px;
 }

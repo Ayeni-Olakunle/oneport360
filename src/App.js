@@ -13,6 +13,7 @@ import Rates from "./components/mainContent/rates";
 import Quotes from "./components/mainContent/quotes";
 import Invoices from "./components/mainContent/invoices";
 import Rectangle from "./image/Rectangle 184.png"
+import ShipmentsTwo from './components/mainContent/customers/shipments';
 import { HiOutlineBell } from 'react-icons/hi';
 import { RiArrowDropDownLine } from "react-icons/ri"
 import { useLocation } from 'react-router-dom';
@@ -50,6 +51,7 @@ function App() {
             <Route path="/rates" element={<Rates />} />
             <Route path="/quotes" element={<Quotes />} />
             <Route path="/invoices" element={<Invoices />} />
+            <Route path="/Shipments" element={<ShipmentsTwo />} />
           </Routes>
         </div>
       </div>
