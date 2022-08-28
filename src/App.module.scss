@@ -48,3 +48,63 @@
   height: 100vh;
   border-right: 1px solid #e5e7eb;
 }
+
+.bigBox {
+  width: 80%;
+}
+
+.bigBox2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.second {
+  display: flex;
+  align-items: center;
+}
+
+.holdImage {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.temoc {
+  margin-left: 8px;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.icon {
+  font-size: 23px;
+}
+
+.three {
+  background-color: #dd2747;
+  color: white;
+  padding: 1px 4px;
+  border-radius: 50%;
+  font-size: 10px;
+  margin-top: -15px;
+  margin-right: -22px;
+  z-index: 1;
+}
+
+.holdThree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.curr {
+  text-transform: capitalize;
+}
+
+.routesAll {
+  width: 92%;
+  padding: 30px 40px;
+}

@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from "../../image/logo.png"
 import naviStyle from "./navigator.module.scss"
 import { FaUserCircle, FaUsers } from 'react-icons/fa';
 import { ImTruck } from 'react-icons/im';
 import { IoDocumentText, IoGrid, IoMap } from 'react-icons/io5';
 import { HiDocumentDuplicate, HiDocumentRemove } from 'react-icons/hi';
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 function Navigator() {
-    const [current, setCurrent] = useState(0)
+    const [current, setCurrent] = useState("/")
     const switchCurrent = (index) => {
         setCurrent(index)
     }
+    useEffect(() => {
+        switchCurrent(locations.pathname)
+    })
+    const locations = useLocation();
     return (
         <div className={naviStyle.holdAll}>
             <div className={naviStyle.holdLogo}>
@@ -19,74 +23,74 @@ function Navigator() {
             </div>
             <div className={naviStyle.holdNavigate}>
                 <div className={naviStyle.menu}>
-                    <div className={naviStyle.point} onClick={() => { switchCurrent(0) }}>
-                        <Link to="/dashboard" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><IoGrid className={current === 0 ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === 0 ? naviStyle.adminText : naviStyle.text}>Dashboard</span>
+                    <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
+                        <Link to="/" className={naviStyle.link}>
+                            <span className={naviStyle.imkg}><IoGrid className={current === "/" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/" ? naviStyle.adminText : naviStyle.text}>Dashboard</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
-                    <div className={naviStyle.point} onClick={() => { switchCurrent(1) }}>
+                    <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/admin" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><FaUserCircle className={current === 1 ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === 1 ? naviStyle.adminText : naviStyle.text}>Admin</span>
+                            <span className={naviStyle.imkg}><FaUserCircle className={current === "/admin" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === '/admin' ? naviStyle.adminText : naviStyle.text}>Admin</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
-                    <div className={naviStyle.point} onClick={() => { switchCurrent(2) }}>
+                    <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/customers" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><FaUsers className={current === 2 ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === 2 ? naviStyle.adminText : naviStyle.text}>Customers</span>
+                            <span className={naviStyle.imkg}><FaUsers className={current === "/customers" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/customers" ? naviStyle.adminText : naviStyle.text}>Customers</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
-                    <div className={naviStyle.point} onClick={() => { switchCurrent(3) }}>
+                    <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/shipments" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><ImTruck className={current === 3 ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === 3 ? naviStyle.adminText : naviStyle.text}>Shipments</span>
+                            <span className={naviStyle.imkg}><ImTruck className={current === "/shipments" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/shipments" ? naviStyle.adminText : naviStyle.text}>Shipments</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
-                    <div className={naviStyle.point} onClick={() => { switchCurrent(4) }}>
+                    <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/tracking" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><IoMap className={current === 4 ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === 4 ? naviStyle.adminText : naviStyle.text}>Tracking</span>
+                            <span className={naviStyle.imkg}><IoMap className={current === "/tracking" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/tracking" ? naviStyle.adminText : naviStyle.text}>Tracking</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
-                    <div className={naviStyle.point} onClick={() => { switchCurrent(5) }}>
+                    <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/documents" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><IoDocumentText className={current === 5 ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === 5 ? naviStyle.adminText : naviStyle.text}>Documents</span>
+                            <span className={naviStyle.imkg}><IoDocumentText className={current === "/documents" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/documents" ? naviStyle.adminText : naviStyle.text}>Documents</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
-                    <div className={naviStyle.point} onClick={() => { switchCurrent(6) }}>
+                    <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/rates" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><IoDocumentText className={current === 6 ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === 6 ? naviStyle.adminText : naviStyle.text}>Rates</span>
+                            <span className={naviStyle.imkg}><IoDocumentText className={current === "/rates" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/rates" ? naviStyle.adminText : naviStyle.text}>Rates</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
-                    <div className={naviStyle.point} onClick={() => { switchCurrent(7) }}>
+                    <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/quotes" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><HiDocumentDuplicate className={current === 7 ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === 7 ? naviStyle.adminText : naviStyle.text}>Quotes</span>
+                            <span className={naviStyle.imkg}><HiDocumentDuplicate className={current === "/quotes" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/quotes" ? naviStyle.adminText : naviStyle.text}>Quotes</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
-                    <div className={naviStyle.point} onClick={() => { switchCurrent(8) }}>
+                    <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/invoices" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><HiDocumentRemove className={current === 8 ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === 8 ? naviStyle.adminText : naviStyle.text}>Invoices</span>
+                            <span className={naviStyle.imkg}><HiDocumentRemove className={current === "/invoices" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/invoices" ? naviStyle.adminText : naviStyle.text}>Invoices</span>
                         </Link>
                     </div>
                 </div>
