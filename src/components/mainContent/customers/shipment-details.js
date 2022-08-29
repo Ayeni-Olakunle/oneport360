@@ -38,7 +38,7 @@ function ShipmentDetails(props) {
             <div className={detailStyle.holdTable2}>
                 <div>
                     <p>Port of Discharge</p>
-                    <h3>NGAPP</h3>
+                    <h6>NGAPP</h6>
                     <span>Lagos, Nigeria</span>
                 </div>
                 <div className={detailStyle.holdLine}>
@@ -48,8 +48,10 @@ function ShipmentDetails(props) {
                 </div>
                 <div>
                     <p>Port of Discharge</p>
-                    <h3>NGAPP</h3>
+                    <h6>NGAPP</h6>
                     <span>Lagos, Nigeria</span>
+                </div>
+                <div className={detailStyle.holdLine3}>
                 </div>
             </div>
         </div>
