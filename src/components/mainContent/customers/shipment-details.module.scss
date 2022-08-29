@@ -1,0 +1,60 @@
+.backCore {
+  cursor: pointer;
+}
+
+.holdTracking {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backArrow {
+  //   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.whiteButton {
+  color: #374151;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 30px;
+  border-radius: 8px;
+  background: #f9fafb;
+  border: 2px solid #d1d5db;
+  margin-left: 15px;
+}
+
+.h2Name {
+  font-size: 24px;
+  margin-left: 25px;
+}
+
+.holdTable {
+  width: 70%;
+  background: #3ab44a;
+  border-radius: 14px 14px 0px 0px;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 17px;
+  margin-top: 30px;
+  color: white;
+}
+
+.import {
+  background-color: #f0fdf4;
+  color: #3ab44a;
+  padding: 10px 13px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.ship {
+  margin: 0;
+}

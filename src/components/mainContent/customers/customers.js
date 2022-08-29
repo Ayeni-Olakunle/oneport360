@@ -43,9 +43,11 @@ function Customers() {
                                 <td className={customerStyles.tableBorder}>2022/08/10</td>
                                 <td className={customerStyles.tableBorder}>
                                     <div className={customerStyles.holdButin}>
-                                        <button className={customerStyles.customerWhaite}>
-                                            <Link to="/shipmentsme">Shipments</Link>
-                                        </button>
+                                        <Link to="/shipmentsme" className={customerStyles.customerWhaite2}>
+                                            <button className={customerStyles.customerWhaite}>
+                                                Shipments
+                                            </button>
+                                        </Link>
                                         <button className={customerStyles.editButton}>Edit</button>
                                     </div>
                                 </td>
