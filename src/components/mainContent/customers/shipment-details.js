@@ -24,11 +24,32 @@ function ShipmentDetails(props) {
                     <span>Export</span>
                 </div>
                 <div>
+                </div>
+                <div>
                     <span>Apr 02, 2022</span>
+                </div>
+                <div>
                 </div>
                 <div>
                     <p className={detailStyle.ship}>Shipment ID</p>
                     <span>678399363</span>
+                </div>
+            </div>
+            <div className={detailStyle.holdTable2}>
+                <div>
+                    <p>Port of Discharge</p>
+                    <h3>NGAPP</h3>
+                    <span>Lagos, Nigeria</span>
+                </div>
+                <div className={detailStyle.holdLine}>
+                    <div className={detailStyle.smallCircle}></div>
+                    <div className={detailStyle.lineMe}></div>
+                    <div className={detailStyle.smallCircle}></div>
+                </div>
+                <div>
+                    <p>Port of Discharge</p>
+                    <h3>NGAPP</h3>
+                    <span>Lagos, Nigeria</span>
                 </div>
             </div>
         </div>

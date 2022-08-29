@@ -57,4 +57,36 @@
 
 .ship {
   margin: 0;
+  font-weight: normal;
+}
+
+.holdTable2 {
+  width: 70%;
+  background: #f0fdf4;
+  border-radius: 0px 0px 14px 14px;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 17px;
+  color: black;
+}
+
+.smallCircle {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #3ab44a;
+  border-radius: 50%;
+}
+
+.lineMe {
+  width: 70px;
+  height: 3px;
+  background-color: #3ab44a;
+}
+
+.holdLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
