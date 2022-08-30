@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import detailStyle from "./shipment-details.module.scss";
 import { useNavigate } from 'react-router-dom';
-import { ImArrowDownLeft2, ImArrowUpRight2 } from 'react-icons/im';
+import { ImArrowUpRight2 } from 'react-icons/im';
+import { IoDocumentTextOutline } from 'react-icons/io5';
+import { RiDeleteBinLine } from 'react-icons/ri';
+import UploadFileModal from './uploadFileModal';
 
 function ShipmentDetails(props) {
     const navigate = useNavigate();
+    const [current, setCurrent] = useState(0)
+    const [modalShow, setModalShow] = useState(false);
+    const currentStake = (index) => {
+        setCurrent(index)
+    }
     return (
         <div>
             <div className={detailStyle.holdTracking}>
@@ -54,7 +62,56 @@ function ShipmentDetails(props) {
                 <div className={detailStyle.holdLine3}>
                 </div>
             </div>
-        </div>
+            <div className={detailStyle.buttonLine}>
+                <button className={current === 0 ? detailStyle.butActive : detailStyle.but} onClick={() => { currentStake(0) }}>Documents</button>
+                <button className={current === 1 ? detailStyle.butActive : detailStyle.but} onClick={() => { currentStake(1) }}>Cargo Details</button>
+                <button className={current === 2 ? detailStyle.butActive : detailStyle.but} onClick={() => { currentStake(2) }}>Additional Services</button>
+                <button className={current === 3 ? detailStyle.butActive : detailStyle.but} onClick={() => { currentStake(3) }}>Rate</button>
+            </div>
+            <div>
+                <div className={current === 0 ? detailStyle.disG : detailStyle.disG2}>
+                    <div className={detailStyle.docs}>
+                        <h5 className={detailStyle.uploadText}>Uploaded Documents</h5>
+                        <div className={detailStyle.holdButin}>
+                            <button className={detailStyle.customerWhaite}>
+                                Shipments
+                            </button>
+                            <button className={detailStyle.editButton} onClick={() => setModalShow(true)}>Upload Documents{"  "} <IoDocumentTextOutline /></button>
+                        </div>
+                    </div>
+                    <div className={detailStyle.holdUpload}>
+                        <div className={detailStyle.holdUpload2}>
+                            <span className={detailStyle.fileIcon}><IoDocumentTextOutline /></span>
+                            <div>
+                                <p className={detailStyle.tiltle5}>NXP Form</p>
+                                <p className={detailStyle.tiltle6}>NXP-Form.pdf</p>
+                                <p className={detailStyle.tiltle7}>Uploaded by you</p>
+                            </div>
+                        </div>
+                        <div>
+                            <span className={detailStyle.fileIcon2}> <RiDeleteBinLine /></span>
+                        </div>
+                    </div>
+                    <div className={detailStyle.holdUpload}>
+                        <div className={detailStyle.holdUpload2}>
+                            <span className={detailStyle.fileIcon}><IoDocumentTextOutline /></span>
+                            <div>
+                                <p className={detailStyle.tiltle5}>NXP Form</p>
+                                <p className={detailStyle.tiltle6}>NXP-Form.pdf</p>
+                                <p className={detailStyle.tiltle7}>Uploaded by you</p>
+                            </div>
+                        </div>
+                        <div>
+                            <span className={detailStyle.fileIcon2}> <RiDeleteBinLine /></span>
+                        </div>
+                    </div>
+                </div>
+                <div className={current === 1 ? detailStyle.disG : detailStyle.disG2}>Cargo Details</div>
+                <div className={current === 2 ? detailStyle.disG : detailStyle.disG2}>Additional Services</div>
+                <div className={current === 3 ? detailStyle.disG : detailStyle.disG2}>Rate</div>
+            </div>
+            <UploadFileModal show={modalShow} onHide={() => setModalShow(false)} />
+        </div >
     );
 }
 

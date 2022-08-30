@@ -70,6 +70,7 @@
   align-items: center;
   font-size: 17px;
   color: black;
+  padding: 15px;
 }
 
 .smallCircle {
@@ -96,4 +97,133 @@
 
 h6 {
   margin: 0;
+}
+
+.buttonLine {
+  width: 70%;
+  border-bottom: 1.5px solid #d1d5db;
+  margin-top: 25px;
+}
+
+.but {
+  padding: 8px 25px;
+  border: none;
+  background-color: white;
+  color: #6b7280;
+  margin-bottom: -1.5px;
+  border: none;
+}
+
+.butActive {
+  padding: 8px 25px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-bottom: 1.5px solid #3ab44a !important;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: -1.5px;
+}
+
+.disG {
+  display: block;
+}
+
+.disG2 {
+  display: none;
+}
+
+.editButton {
+  background: #3ab44a;
+  border-radius: 6px;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.customerWhaite {
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: black;
+  padding: 8px 20px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.holdButin {
+  display: flex;
+}
+
+.docs {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+.uploadText {
+  margin: 0;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.fileIcon {
+  background-color: #f0fdf4;
+  color: #3ab44a;
+  padding: 10px 14px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.fileIcon2 {
+  background-color: #fef2f2;
+  color: #ef4444;
+  padding: 10px 14px;
+  border-radius: 50%;
+}
+
+.tiltle5 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 18px;
+}
+.tiltle6 {
+  font-weight: bold;
+  margin: 0;
+  font-size: 14px;
+}
+.tiltle7 {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.holdUpload {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.holdUpload2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
