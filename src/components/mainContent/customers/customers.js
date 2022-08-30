@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IoIosAdd } from 'react-icons/io';
 import customerStyles from "./customers.module.scss";
 import flower2 from "../../../image/flower2.jfif";

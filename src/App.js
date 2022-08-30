@@ -21,7 +21,6 @@ import { useLocation } from 'react-router-dom';
 
 function App() {
   const location = useLocation();
-  console.log(location.pathname[1]);
   return (
     <div className={appStyle.holdAll}>
       <div className={appStyle.smallBox}>
