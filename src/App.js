@@ -52,7 +52,7 @@ function App() {
             <Route path="/rates" element={<Rates />} />
             <Route path="/quotes" element={<Quotes />} />
             <Route path="/invoices" element={<Invoices />} />
-            <Route path="/shipmentsme" element={<ShipmentsTwo />} />
+            <Route path="/shipment" element={<ShipmentsTwo />} />
             <Route path="/shipmentDetails" element={<ShipmentDetails />} />
           </Routes>
         </div>

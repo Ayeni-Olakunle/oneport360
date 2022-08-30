@@ -23,14 +23,18 @@ function Customers() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td className={customerStyles.tableBorder}>Jonh</td>
+                                <td className={customerStyles.tableBorder}><div className={customerStyles.holdImage}><img src={flower2} alt="Profile" className={customerStyles.img} /> <span>Jonh</span></div></td>
                                 <td className={customerStyles.tableBorder}>Tom</td>
                                 <td className={customerStyles.tableBorder}>jonh@gmail.com</td>
                                 <td className={customerStyles.tableBorder}>09098402605</td>
                                 <td className={customerStyles.tableBorder}>2022/08/10</td>
                                 <td className={customerStyles.tableBorder}>
                                     <div className={customerStyles.holdButin}>
-                                        <button className={customerStyles.customerWhaite}>Shipments</button>
+                                        <Link to="/shipment" className={customerStyles.customerWhaite2}>
+                                            <button className={customerStyles.customerWhaite}>
+                                                Shipments
+                                            </button>
+                                        </Link>
                                         <button className={customerStyles.editButton}>Edit</button>
                                     </div>
                                 </td>
@@ -43,7 +47,7 @@ function Customers() {
                                 <td className={customerStyles.tableBorder}>2022/08/10</td>
                                 <td className={customerStyles.tableBorder}>
                                     <div className={customerStyles.holdButin}>
-                                        <Link to="/shipmentsme" className={customerStyles.customerWhaite2}>
+                                        <Link to="/shipments" className={customerStyles.customerWhaite2}>
                                             <button className={customerStyles.customerWhaite}>
                                                 Shipments
                                             </button>
