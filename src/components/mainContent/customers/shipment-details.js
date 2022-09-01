@@ -28,7 +28,6 @@ function ShipmentDetails(props) {
             .get("https://demo3522726.mockable.io/get_single_shipment_details/987654321")
             .then((response) => {
                 setLoader(false)
-                console.log(response.data);
                 setDestion(response.data.destination_port_full_details.name + ", " + response.data.destination_port_full_details.country)
                 setPickup(response.data.local_government + ", " + response.data.state)
                 setType(response.data.shipping_type)

@@ -22,6 +22,7 @@ function Customers() {
                 setLoader(false)
             })
             .catch((err) => {
+                console.log(err.message);
                 setError(err.message);
                 setLoader(false)
             })
