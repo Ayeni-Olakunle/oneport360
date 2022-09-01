@@ -46,13 +46,13 @@ function App() {
             <Route path="/" element={<Dashbord />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/customers" element={<Customers />} />
-            <Route path="/shipments" element={<Shipments />} />
+            <Route path="/shipment" element={<Shipments />} />
             <Route path="/tracking" element={<Tracking />} />
-            <Route path="/documents" element={<Documents />} />
+            <Route path="/document" element={<Documents />} />
             <Route path="/rates" element={<Rates />} />
             <Route path="/quotes" element={<Quotes />} />
             <Route path="/invoices" element={<Invoices />} />
-            <Route path="/shipment" element={<ShipmentsTwo />} />
+            <Route path="/shipments" element={<ShipmentsTwo />} />
             <Route path="/shipmentDetails" element={<ShipmentDetails />} />
           </Routes>
         </div>

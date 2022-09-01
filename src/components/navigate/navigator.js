@@ -41,14 +41,14 @@ function Navigator() {
                 <div className={naviStyle.menu}>
                     <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/customers" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><FaUsers className={current === "/customers" ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === "/customers" ? naviStyle.adminText : naviStyle.text}>Customers</span>
+                            <span className={naviStyle.imkg}><FaUsers className={current === "/customers" || current === "/shipment" || current === "/shipmentDetails" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/customers" || current === "/shipment" || current === "/shipmentDetails" ? naviStyle.adminText : naviStyle.text}>Customers</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
                     <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
-                        <Link to="/shipments" className={naviStyle.link}>
+                        <Link to="/shipment" className={naviStyle.link}>
                             <span className={naviStyle.imkg}><ImTruck className={current === "/shipments" ? naviStyle.actIcon : naviStyle.con} /></span>
                             <span className={current === "/shipments" ? naviStyle.adminText : naviStyle.text}>Shipments</span>
                         </Link>

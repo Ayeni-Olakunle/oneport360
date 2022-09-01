@@ -55,7 +55,7 @@ function Customers() {
                                             <td className={customerStyles.tableBorder}>2022/08/10</td>
                                             <td className={customerStyles.tableBorder}>
                                                 <div className={customerStyles.holdButin}>
-                                                    <Link to="/shipment" className={customerStyles.customerWhaite2}>
+                                                    <Link to="/shipments" className={customerStyles.customerWhaite2}>
                                                         <button className={customerStyles.customerWhaite} onClick={() => {
                                                             dispatch(positionState(item.id))
                                                         }}>
