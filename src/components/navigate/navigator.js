@@ -41,16 +41,16 @@ function Navigator() {
                 <div className={naviStyle.menu}>
                     <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/customers" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><FaUsers className={current === "/customers" || current === "/shipment" || current === "/shipmentDetails" ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === "/customers" || current === "/shipment" || current === "/shipmentDetails" ? naviStyle.adminText : naviStyle.text}>Customers</span>
+                            <span className={naviStyle.imkg}><FaUsers className={current === "/customers" || current === "/shipments" || current === "/shipmentDetails" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/customers" || current === "/shipments" || current === "/shipmentDetails" ? naviStyle.adminText : naviStyle.text}>Customers</span>
                         </Link>
                     </div>
                 </div>
                 <div className={naviStyle.menu}>
                     <div className={naviStyle.point} onClick={() => { switchCurrent(locations.pathname) }}>
                         <Link to="/shipment" className={naviStyle.link}>
-                            <span className={naviStyle.imkg}><ImTruck className={current === "/shipments" ? naviStyle.actIcon : naviStyle.con} /></span>
-                            <span className={current === "/shipments" ? naviStyle.adminText : naviStyle.text}>Shipments</span>
+                            <span className={naviStyle.imkg}><ImTruck className={current === "/shipment" ? naviStyle.actIcon : naviStyle.con} /></span>
+                            <span className={current === "/shipment" ? naviStyle.adminText : naviStyle.text}>Shipments</span>
                         </Link>
                     </div>
                 </div>
