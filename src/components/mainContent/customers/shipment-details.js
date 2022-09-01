@@ -13,9 +13,11 @@ function ShipmentDetails(props) {
     const navigate = useNavigate();
     const [current, setCurrent] = useState(0)
     const [destination, setDestion] = useState()
+    const [pickup, setPickup] = useState()
     const [loader, setLoader] = useState(false);
     const [modalShow, setModalShow] = useState(false);
     const [error, setError] = useState("");
+    const [type, setType] = useState("");
     const currentStake = (index) => {
         setCurrent(index)
     }
@@ -27,7 +29,9 @@ function ShipmentDetails(props) {
             .then((response) => {
                 setLoader(false)
                 console.log(response.data);
-                setDestion(response.data.destination_port_full_details.name + " " + response.data.destination_port_full_details.country)
+                setDestion(response.data.destination_port_full_details.name + ", " + response.data.destination_port_full_details.country)
+                setPickup(response.data.local_government + ", " + response.data.state)
+                setType(response.data.shipping_type)
             })
             .catch((error) => {
                 console.log(error.message);
@@ -54,7 +58,7 @@ function ShipmentDetails(props) {
             <div className={detailStyle.holdTable}>
                 <div>
                     <span className={detailStyle.import}><ImArrowUpRight2 /></span>
-                    <span>Export</span>
+                    <span style={{ textTransform: 'capitalize' }}>{type}</span>
                 </div>
                 <div>
                 </div>
@@ -72,7 +76,7 @@ function ShipmentDetails(props) {
                 <div>
                     <p>Port of Discharge</p>
                     <h6>NGAPP</h6>
-                    <span>{destination}</span>
+                    <span>{pickup}</span>
                 </div>
                 <div className={detailStyle.holdLine}>
                     <div className={detailStyle.smallCircle}></div>
