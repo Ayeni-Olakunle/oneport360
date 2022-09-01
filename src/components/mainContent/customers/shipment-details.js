@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 import detailStyle from "./shipment-details.module.scss";
 import { useNavigate } from 'react-router-dom';
@@ -6,14 +6,39 @@ import { ImArrowUpRight2 } from 'react-icons/im';
 import { IoDocumentTextOutline } from 'react-icons/io5';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import UploadFileModal from './uploadFileModal';
+import axios from 'axios';
+import Loader from "../../loader/loader"
 
 function ShipmentDetails(props) {
     const navigate = useNavigate();
     const [current, setCurrent] = useState(0)
+    const [destination, setDestion] = useState()
+    const [loader, setLoader] = useState(false);
     const [modalShow, setModalShow] = useState(false);
+    const [error, setError] = useState("");
     const currentStake = (index) => {
         setCurrent(index)
     }
+
+    const singleSHipment = () => {
+        setLoader(true)
+        axios
+            .get("https://demo3522726.mockable.io/get_single_shipment_details/987654321")
+            .then((response) => {
+                setLoader(false)
+                console.log(response.data);
+                setDestion(response.data.destination_port_full_details.name + " " + response.data.destination_port_full_details.country)
+            })
+            .catch((error) => {
+                console.log(error.message);
+                setError(error.message);
+                setLoader(false)
+            })
+    }
+
+    useEffect(() => {
+        singleSHipment()
+    }, [])
     return (
         <div>
             <div className={detailStyle.holdTracking}>
@@ -40,14 +65,14 @@ function ShipmentDetails(props) {
                 </div>
                 <div>
                     <p className={detailStyle.ship}>Shipment ID</p>
-                    <span>678399363</span>
+                    <span>38846729</span>
                 </div>
             </div>
             <div className={detailStyle.holdTable2}>
                 <div>
                     <p>Port of Discharge</p>
                     <h6>NGAPP</h6>
-                    <span>Lagos, Nigeria</span>
+                    <span>{destination}</span>
                 </div>
                 <div className={detailStyle.holdLine}>
                     <div className={detailStyle.smallCircle}></div>
@@ -57,7 +82,7 @@ function ShipmentDetails(props) {
                 <div>
                     <p>Port of Discharge</p>
                     <h6>NGAPP</h6>
-                    <span>Lagos, Nigeria</span>
+                    <span>{destination}</span>
                 </div>
                 <div className={detailStyle.holdLine3}>
                 </div>
@@ -111,6 +136,8 @@ function ShipmentDetails(props) {
                 <div className={current === 3 ? detailStyle.disG : detailStyle.disG2}>Rate</div>
             </div>
             <UploadFileModal show={modalShow} onHide={() => setModalShow(false)} />
+            <p style={{ textAlign: 'center' }}>{error}</p>
+            {loader ? <Loader /> : null}
         </div >
     );
 }

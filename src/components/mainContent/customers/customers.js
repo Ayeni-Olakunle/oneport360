@@ -1,10 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoIosAdd } from 'react-icons/io';
 import customerStyles from "./customers.module.scss";
-import flower2 from "../../../image/flower2.jfif";
 import { Link } from "react-router-dom"
+import axios from 'axios';
+import Loader from "../../loader/loader"
+import { useDispatch } from "react-redux";
+import { positionState } from "../../../feature/customer"
 
 function Customers() {
+    const dispatch = useDispatch();
+    const [allUsers, setAllUsers] = useState([]);
+    const [loader, setLoader] = useState(false);
+    const [error, setError] = useState("");
+
+    useEffect(() => {
+        setLoader(true)
+        axios
+            .get("https://demo3522726.mockable.io/get_customers")
+            .then((response) => {
+                setAllUsers(response.data);
+                setLoader(false)
+            })
+            .catch((err) => {
+                setError(err.message);
+                setLoader(false)
+            })
+    }, []);
     return (
         <div>
             <div>
@@ -22,44 +43,37 @@ function Customers() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td className={customerStyles.tableBorder}><div className={customerStyles.holdImage}><img src={flower2} alt="Profile" className={customerStyles.img} /> <span>Jonh</span></div></td>
-                                <td className={customerStyles.tableBorder}>Tom</td>
-                                <td className={customerStyles.tableBorder}>jonh@gmail.com</td>
-                                <td className={customerStyles.tableBorder}>09098402605</td>
-                                <td className={customerStyles.tableBorder}>2022/08/10</td>
-                                <td className={customerStyles.tableBorder}>
-                                    <div className={customerStyles.holdButin}>
-                                        <Link to="/shipment" className={customerStyles.customerWhaite2}>
-                                            <button className={customerStyles.customerWhaite}>
-                                                Shipments
-                                            </button>
-                                        </Link>
-                                        <button className={customerStyles.editButton}>Edit</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={customerStyles.tableBorder}><div className={customerStyles.holdImage}><img src={flower2} alt="Profile" className={customerStyles.img} /> <span>Jonh</span></div></td>
-                                <td className={customerStyles.tableBorder}>Tom</td>
-                                <td className={customerStyles.tableBorder}>jonh@gmail.com</td>
-                                <td className={customerStyles.tableBorder}>09098402605</td>
-                                <td className={customerStyles.tableBorder}>2022/08/10</td>
-                                <td className={customerStyles.tableBorder}>
-                                    <div className={customerStyles.holdButin}>
-                                        <Link to="/shipments" className={customerStyles.customerWhaite2}>
-                                            <button className={customerStyles.customerWhaite}>
-                                                Shipments
-                                            </button>
-                                        </Link>
-                                        <button className={customerStyles.editButton}>Edit</button>
-                                    </div>
-                                </td>
-                            </tr>
+                            {
+                                allUsers.map((item, index) => {
+                                    return (
+                                        <tr key={index}>
+                                            <td className={customerStyles.tableBorder}><div className={customerStyles.holdImage}><img src={item.Avatar} alt="Profile" className={customerStyles.img} /> <span>{item.first_name}</span></div></td>
+                                            <td className={customerStyles.tableBorder}>{item.last_name}</td>
+                                            <td className={customerStyles.tableBorder}>{item.email}</td>
+                                            <td className={customerStyles.tableBorder}>{item.phone}</td>
+                                            <td className={customerStyles.tableBorder}>2022/08/10</td>
+                                            <td className={customerStyles.tableBorder}>
+                                                <div className={customerStyles.holdButin}>
+                                                    <Link to="/shipment" className={customerStyles.customerWhaite2}>
+                                                        <button className={customerStyles.customerWhaite} onClick={() => {
+                                                            dispatch(positionState(item.id))
+                                                        }}>
+                                                            Shipments
+                                                        </button>
+                                                    </Link>
+                                                    <button className={customerStyles.editButton}>Edit</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>
             </div>
+            <p style={{ textAlign: 'center' }}>{error}</p>
+            {loader ? <Loader /> : null}
         </div >
     );
 }
